@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import { useCreateTodo } from "@/store/todos";
+import { useCreateTodoMuatation } from "@/hooks/mutations/use-create-todo-mutation";
 
 export default function TodoEditor() {
-  const createTodo = useCreateTodo();
+  const { mutate } = useCreateTodoMuatation();
   const [content, setContent] = useState("");
 
   const handleAddClick = () => {
     if (content.trim() === "") return;
-    createTodo(content);
+    mutate(content);
     setContent("");
   };
 
