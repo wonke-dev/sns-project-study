@@ -41,3 +41,19 @@ export async function singInWithOAuth(provider: Provider) {
   if (error) throw error;
   return data;
 }
+
+export async function requestPasswordResetEmail(email: string) {
+  const { error, data } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${import.meta.env.VITE_PUBLIC_URL}/reset-password`,
+  });
+  if (error) throw error;
+  return data;
+}
+
+export async function updatePassword(password: string) {
+  const { error, data } = await supabase.auth.updateUser({
+    password,
+  });
+  if (error) throw error;
+  return data;
+}
