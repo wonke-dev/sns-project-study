@@ -1,6 +1,10 @@
-import { Button } from "@/components/ui/button";
 import RootRoute from "./lib/root-route";
+import SessionProvider from "./provider/session-provider";
 
 export default function App() {
-  return <RootRoute />;
+  return (
+    <SessionProvider>
+      <RootRoute />
+    </SessionProvider>
+  );
 }
