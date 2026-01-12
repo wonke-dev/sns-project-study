@@ -17,7 +17,7 @@ export async function signUp({
   return data;
 }
 
-export async function singInWithPassword({
+export async function signInWithPassword({
   email,
   password,
 }: {

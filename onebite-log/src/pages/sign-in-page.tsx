@@ -1,4 +1,4 @@
-import { singInWithPassword } from "@/api/auth";
+import { signInWithPassword } from "@/api/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
